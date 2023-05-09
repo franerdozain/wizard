@@ -9,7 +9,6 @@ function validateEmail(email) {
 }
 
 function validateDateOfBirth(dateOfBirth) {
-    const dobPattern = /^(\d{2})\/(\d{2})\/(\d{2})$/;
-    return dobPattern.test(dateOfBirth)
+    const dobPattern = /^(\d{4})-(\d{2})-(\d{2})$/;
+    return dobPattern.test(dateOfBirth);
 }
-
