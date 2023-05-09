@@ -1,4 +1,4 @@
-class User {
+export class User {
     constructor(name, email, dateOfBirth) {
         this.name = name
         this.email = email

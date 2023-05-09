@@ -1,0 +1,16 @@
+/* Styling the phase 1 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#phase1main form {
+    width: max-content;
+    margin: 10% auto;
+    padding: 15px;
+    border: 1px solid black;
+}
+
+#phase1main label, #phase1main input {
+   display: inline-block;
+}
