@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="../Styling/style.css">
 </head>
 <body>
-    <p>Trying merge</p>
+    <form id="formPhase2">
+        <h1>Registration form</h1>
+        <div>
+            <label for="city">City</label>
+            <input name="city" type="text" required>
+        </div>
+        <div>
+            <label for="street">Street</label>
+            <input name="street" type="text" required>
+        </div>
+        <div>
+            <label for="number">Number</label>
+            <input name="number" type="number" required>
+        </div>
+        <div>
+            <button id="submitBtnPhase2" type="submit">Submit</button>
+            <!-- <input value="Submit" name="submitBttn" type="submit"> -->
+        </div>
+    </form>
     <script src="../Scripts/userClass.js"></script>
     <script src="../Scripts/locStorOperations.js"></script>
     <script src="../Scripts/validations.js"></script>
