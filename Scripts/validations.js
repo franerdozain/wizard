@@ -13,3 +13,34 @@ function validateDateOfBirth(dateOfBirth) {
     return dobPattern.test(dateOfBirth)
 }
 
+function getCity() {
+    const city = prompt("Please enter a city name:");
+    return city;
+}
+
+function getStreet() {
+    const street = prompt("Please enter a street name:");
+    return street;
+}
+
+function getHouseNumber() {
+    let houseNumber;
+    do {
+      houseNumber = parseInt(prompt("Please enter a positive house number:"));
+    } while (isNaN(houseNumber) || houseNumber <= 0);
+    return houseNumber;
+}
+
+function getImageUrl() {
+    let imageUrl;
+    do {
+      imageUrl = prompt("Please enter the URL of an image:");
+      const extension = imageUrl.split(".").pop().toLowerCase();
+      if (!["jpg", "jpeg", "png", "gif", "bmp"].includes(extension)) {
+        alert("Invalid image URL. Please enter a URL that points to an image file.");
+        imageUrl = null;
+      }
+    } while (!imageUrl);
+    return imageUrl;
+}
+  
