@@ -1,3 +1,11 @@
+// On page opening
+const checkIfAccessIsAllowed = () => {
+  checkLevlAccess(3);
+  return accessGranted ? accessGranted : goPreviousPage(2)
+}
+checkIfAccessIsAllowed()
+
+
 const nextPageButton = document.getElementById('next-page-button');
 const imageUrlInput = document.getElementById('image-url');
 const errorMessage = document.getElementById('error-message');
@@ -5,21 +13,12 @@ const prevPageButton = document.getElementById('prev-page-button');
 const hobbiesInput = document.getElementById('hobbies');
 const hobbiesList = document.getElementById('hobbies-list');
 
-function validateImageUrl() {
-  const imageUrl = imageUrlInput.value;
-  if (!isValidImageUrl(imageUrl)) {
-    errorMessage.textContent = 'Please enter a valid image URL';
-    nextPageButton.disabled = true;
-  } else {
-    errorMessage.textContent = '';
-    nextPageButton.disabled = false;
-  }
-}
+
 
 imageUrlInput.addEventListener('input', validateImageUrl);
 nextPageButton.addEventListener('click', () => {
   if (isValidImageUrl(imageUrlInput.value)) {
-    goNextPage;
+    goNextPage();
   }
 });
 
