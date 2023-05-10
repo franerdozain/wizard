@@ -31,16 +31,8 @@ function getHouseNumber() {
     return houseNumber;
 }
 
-function getImageUrl() {
-    let imageUrl;
-    do {
-      imageUrl = prompt("Please enter the URL of an image:");
-      const extension = imageUrl.split(".").pop().toLowerCase();
-      if (!["jpg", "jpeg", "png", "gif", "bmp"].includes(extension)) {
-        alert("Invalid image URL. Please enter a URL that points to an image file.");
-        imageUrl = null;
-      }
-    } while (!imageUrl);
-    return imageUrl;
-}
+function isValidImageUrl(url) {
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    return imageExtensions.some(extension => url.endsWith(extension));
+  }
   
