@@ -26,14 +26,3 @@ function isValidImageUrl(url) {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
     return imageExtensions.some(extension => url.endsWith(extension));
 }
-
-function validateImageUrl() {
-    const imageUrl = imageUrlInput.value;
-    if (!isValidImageUrl(imageUrl)) {
-      errorMessage.textContent = 'Please enter a valid image URL';
-      nextPageButton.disabled = true;
-    } else {
-      errorMessage.textContent = '';
-      nextPageButton.disabled = false;
-    }
-}
