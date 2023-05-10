@@ -15,7 +15,11 @@ function validateDateOfBirth(dateOfBirth) {
 
 
 function getHouseNumber(houseNumber) {
-    let houseNumber;
-        while (isNaN(houseNumber) || houseNumber <= 0);
+    let houseNumber = true;
+        if (isNaN(houseNumber) || houseNumber <= 0);
         return houseNumber;
+}
+function isValidImageUrl(url) {
+    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
+    return imageExtensions.some(extension => url.endsWith(extension));
 }

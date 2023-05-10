@@ -19,12 +19,12 @@ function validateImageUrl() {
 imageUrlInput.addEventListener('input', validateImageUrl);
 nextPageButton.addEventListener('click', () => {
   if (isValidImageUrl(imageUrlInput.value)) {
-    window.location.href = 'phase4.html';
+    goNextPage;
   }
 });
 
 prevPageButton.addEventListener('click', () => {
-    window.location.href = 'phase2.html';
+    goPreviousPage();
 })
 
 
