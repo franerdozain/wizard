@@ -26,3 +26,12 @@ function isValidImageUrl(url) {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
     return imageExtensions.some(extension => url.endsWith(extension));
 }
+
+const validateForm = (number) => {
+    if (number <= 0) {
+        return alert("leave number empty or positive")
+    } else {
+        return true;
+    };
+}
+
