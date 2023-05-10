@@ -14,3 +14,25 @@
 #phase1main label, #phase1main input {
    display: inline-block;
 }
+
+/* Styling the phase 4 */
+#phase4 img {
+    height: 100px;
+    width: 100px;
+}
+#phase4 h1 {
+    text-align: center;
+}
+
+#phase4 table {
+    border: 1px solid black;
+}
+
+#phase4 table td {
+    padding: 10px;
+}
+
+#phase4 section {
+    width: max-content;
+    margin: 50px auto;
+}
