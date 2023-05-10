@@ -6,26 +6,6 @@ const checkIfAccessIsAllowed = () => {
 }
 checkIfAccessIsAllowed();
 
-const validateCity = (city) =>{
-    return false
-}
-const validateStreet = (street) => {
-   return true
-}
-const validateNumber = () =>{
-   return true
-}
-
-const validateForm = (city, street, number) => {
-    if (validateCity(city)) {
-        if (validateStreet(street)) {
-            if (validateNumber(number)) {
-                return true;
-            } return `Incorrect number of street`;
-        } return `Incorrect street`;
-    } return `Incorrect city`;
-}
-
 const submitForm = () => {
     const formPhase2 = document.getElementById("formPhase2");
 
@@ -41,13 +21,11 @@ const submitForm = () => {
         userDataObj.city = city;
         userDataObj.street = street;
         userDataObj.number = number;
-
-        // if(validateForm(city, street, number)) {
-        //     updateLocStorage(userDataObj)
-        // } else {
-            
-        // }
-
+        
+        if (validateForm(number)) {
+            setDataInLocStorage(userDataObj)
+            goNextPage(2)
+        }
     });
 
 
