@@ -14,10 +14,13 @@ function validateDateOfBirth(dateOfBirth) {
 }
 
 
-function getHouseNumber(houseNumber) {
+function getHouseNumber(houseNumberProvided) {
     let houseNumber = true;
-        if (isNaN(houseNumber) || houseNumber <= 0);
-        return houseNumber;
+        if (isNaN(houseNumberProvided) || houseNumberProvided <= 0) {
+            houseNumber = false;
+        }
+    return houseNumber;
+
 }
 function isValidImageUrl(url) {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
