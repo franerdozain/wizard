@@ -8,8 +8,29 @@
     <link rel="stylesheet" href="../Styling/style.css">
 </head>
 <body>
-    <script src="../Scripts/userClass.js"></script>
+    <main id="phase1main">
+        <form onsubmit="return validateRegFormPhase1()">
+            <h1>Registration form</h1>
+            <div>
+                <label for="name">Name</label>
+                <input name="name" type="text" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input name="email" type="text" required>
+            </div>
+            <div>
+                <label for="birthdate">Date of birth</label>
+                <input name="birthdate" type="date" required>
+            </div>
+            <div>
+                <input value="Submit" name="submitBttn" type="submit">
+            </div>
+        </form>
+    </main>
+    
     <script src="../Scripts/locStorOperations.js"></script>
+    <script src="../Scripts/userClass.js"></script>
     <script src="../Scripts/validations.js"></script>
     <script src="../Scripts/phase1logic.js"></script>
 </body>

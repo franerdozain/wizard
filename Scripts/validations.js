@@ -9,30 +9,6 @@ function validateEmail(email) {
 }
 
 function validateDateOfBirth(dateOfBirth) {
-    const dobPattern = /^(\d{2})\/(\d{2})\/(\d{2})$/;
-    return dobPattern.test(dateOfBirth)
+    const dobPattern = /^(\d{4})-(\d{2})-(\d{2})$/;
+    return dobPattern.test(dateOfBirth);
 }
-
-function getCity() {
-    const city = prompt("Please enter a city name:");
-    return city;
-}
-
-function getStreet() {
-    const street = prompt("Please enter a street name:");
-    return street;
-}
-
-function getHouseNumber() {
-    let houseNumber;
-    do {
-      houseNumber = parseInt(prompt("Please enter a positive house number:"));
-    } while (isNaN(houseNumber) || houseNumber <= 0);
-    return houseNumber;
-}
-
-function isValidImageUrl(url) {
-    const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-    return imageExtensions.some(extension => url.endsWith(extension));
-  }
-  
