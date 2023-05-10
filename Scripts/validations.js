@@ -13,7 +13,6 @@ function validateDateOfBirth(dateOfBirth) {
     return dobPattern.test(dateOfBirth);
 }
 
-
 function getHouseNumber(houseNumberProvided) {
     let houseNumber = true;
         if (isNaN(houseNumberProvided) || houseNumberProvided <= 0) {
@@ -25,4 +24,23 @@ function getHouseNumber(houseNumberProvided) {
 function isValidImageUrl(url) {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
     return imageExtensions.some(extension => url.endsWith(extension));
+}
+
+function validateImageUrl() {
+    const imageUrl = imageUrlInput.value;
+    if (!isValidImageUrl(imageUrl)) {
+      errorMessage.textContent = 'Please enter a valid image URL';
+      nextPageButton.disabled = true;
+    } else {
+      errorMessage.textContent = '';
+      nextPageButton.disabled = false;
+    }
+}
+
+const validateForm = (number) => {
+    if (number <= 0) {
+        return alert("leave number empty or positive")
+    } else {
+        return true;
+    };
 }
