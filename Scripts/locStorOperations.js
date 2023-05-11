@@ -1,5 +1,4 @@
 // get data from local storage
-//const localStorage = window.localStorage;
 const userDataStr = localStorage.getItem("user");
 const userDataObj = JSON.parse(userDataStr);
 console.log(userDataObj);
