@@ -14,12 +14,7 @@ function validateDateOfBirth(dateOfBirth) {
 }
 
 function getHouseNumber(houseNumberProvided) {
-    let houseNumber = true;
-        if (isNaN(houseNumberProvided) || houseNumberProvided <= 0) {
-            houseNumber = false;
-        }
-    return houseNumber;
-
+    return houseNumberProvided === "" || houseNumberProvided > 0 ? true : false;
 }
 function isValidImageUrl(url) {
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
@@ -35,12 +30,4 @@ function validateImageUrl() {
       errorMessage.textContent = '';
       nextPageButton.disabled = false;
     }
-}
-
-const validateForm = (number) => {
-    if (number <= 0) {
-        return alert("leave number empty or positive")
-    } else {
-        return true;
-    };
 }

@@ -2,7 +2,8 @@
 const form = document.querySelector('form')
 
 // On submission validate form details, create new user, add it to localStorage
-function validateRegFormPhase1() {
+function validateRegFormPhase1(event) {
+    event.preventDefault();
     const formData = new FormData(form)
     const data = Object.fromEntries(formData.entries())
     if (validateName(...(data.name.split(' ')))) {

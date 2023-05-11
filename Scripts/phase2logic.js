@@ -1,10 +1,8 @@
 // check if user is allowed to enter this phase or redirect to allowed phase
 const checkIfAccessIsAllowed = () => {
     checkLevlAccess(2);
-    console.log("access", accessGranted);
-    return accessGranted ? accessGranted : window.location = "phase1.html"
+    return accessGranted ? accessGranted : goPreviousPage(1);
 }
-checkIfAccessIsAllowed();
 
 const submitForm = () => {
     const formPhase2 = document.getElementById("formPhase2");
@@ -23,14 +21,23 @@ const submitForm = () => {
         userDataObj.number = number;
         userDataObj.accessLvl +=1
         
-        if (validateForm(number)) {
+        if (getHouseNumber(number)) {
             setDataInLocStorage(userDataObj)
             goNextPage(2)
+        } else{
+            alert("Leave number empty or positive");
         }
     });
-
-
 }
-submitForm();
 
-console.log(userDataObj);
+const goBack = () => {
+    const prevPage = document.getElementById("prevPage")
+    prevPage.addEventListener("click", () =>{
+        goPreviousPage(2)
+    })
+}
+
+
+checkIfAccessIsAllowed();
+submitForm();
+goBack()
