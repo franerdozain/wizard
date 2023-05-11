@@ -9,6 +9,7 @@ checkIfAccessIsAllowed()
 const userInfoTable = document.querySelector('table')
 const imageSpot = document.querySelector('span')
 const buttonBack = document.querySelector('button')
+const resetAndBackHome = document.getElementById("resetAndBackHome") //maybe there'll be conflict with the queryselector('button')
 
 // Test object for localStorage
 // localStorage.setItem('user', JSON.stringify({name: "Andrei Milman", email: "vyrido@gmail.com", birthdate: "2023-05-02", city: "Haifa", street: "Elezor", accessLvl: 4, number: 4, hobbies: [1, 2, 3], image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png'}))
@@ -46,3 +47,10 @@ buttonBack.addEventListener('click', () => {
 
 renderUserInfoTable()
 renderImage()
+
+// reset data at local storage and go to phase 1
+
+resetAndBackHome.addEventListener("click", () => {
+    localStorage.removeItem("user");
+    window.location = "phase1.html";
+})
