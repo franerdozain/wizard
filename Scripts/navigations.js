@@ -6,12 +6,13 @@ const pagesUrls = {
 
 function goNextPage(currentPhaseNumber) {
     if (currentPhaseNumber + 1 <= Object.values(pagesUrls).length) {
-        window.open(pagesUrls[currentPhaseNumber + 1])
+        window.location.href = pagesUrls[currentPhaseNumber + 1]
+        
     }
 }
 
 function goPreviousPage(currentPhaseNumber) {
     if (currentPhaseNumber - 1 >= 1) {
-        window.open(pagesUrls[currentPhaseNumber - 1])
+        window.location.href = pagesUrls[currentPhaseNumber - 1]
     }
 }
