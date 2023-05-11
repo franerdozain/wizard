@@ -26,7 +26,7 @@ const submitForm = () => {
             goNextPage(2)
         } else{
             alert("Leave number empty or positive");
-        }
+        }  
     });
 }
 
