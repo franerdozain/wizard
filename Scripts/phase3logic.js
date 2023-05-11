@@ -46,7 +46,7 @@ const submitForm = () => {
 
 prevPageButton.addEventListener('click', () => {
   console.log('it works')
-  goPreviousPage(2);
+  goPreviousPage(3);
 
 })
 
