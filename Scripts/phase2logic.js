@@ -19,8 +19,8 @@ const submitForm = () => {
         userDataObj.city = city;
         userDataObj.street = street;
         userDataObj.number = number;
-        userDataObj.accessLvl += 1;
-
+        userDataObj.accessLvl +=1
+        
         if (getHouseNumber(number)) {
             setDataInLocStorage(userDataObj)
             goNextPage(2)
