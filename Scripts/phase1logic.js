@@ -9,7 +9,8 @@ function validateRegFormPhase1(event) {
     if (validateName(...(data.name.split(' ')))) {
         if (validateEmail(data.email)) {
             if (validateDateOfBirth(data.birthdate)) {
-                setDataInLocStorage(createUserInstance(data.name, data.email, data.birthdate))
+                localStorage.setItem('user', JSON.stringify(createUserInstance(data.name, data.email, data.birthdate)))
+                // window.open("../Pages/phase2.html") // Refactor maybe
                 goNextPage(1)
             } else {
                 alert("Input correct date of birth!")

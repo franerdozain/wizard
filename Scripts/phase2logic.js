@@ -1,5 +1,9 @@
-checkIfAccessIsAllowed(2)
- 
+// check if user is allowed to enter this phase or redirect to allowed phase
+const checkIfAccessIsAllowed = () => {
+    checkLevlAccess(2);
+    return accessGranted ? accessGranted : goPreviousPage(1);
+}
+
 const submitForm = () => {
     const formPhase2 = document.getElementById("formPhase2");
 
