@@ -9,11 +9,11 @@
 </head>
 <body class="phase1">
     <main id="phase1main">
-        <form onsubmit="return validateRegFormPhase1(event)">
+        <form id="formPhase1" onsubmit="validateRegFormPhase1(event)">
             <h1>Registration form</h1>
             <div>
-                <label for="name">Name</label>
-                <input name="name" type="text" required autofocus>
+                <label for="name">Name and last name</label>
+                <input name="name" type="text" id="name" required autofocus>
             </div>
             <div>
                 <label for="email">Email</label>
@@ -23,14 +23,13 @@
                 <label for="birthdate">Date of birth</label>
                 <input name="birthdate" type="date" required>
             </div>
-            <div>
-                <input value="Submit" name="submitBttn" type="submit">
+            <div id="phase1NavBtn">
+                <input value="Submit" id="submitBttn" name="submitBttn" type="submit">
             </div>
         </form>
     </main>
-    
-    <script src="../Scripts/locStorOperations.js"></script>
     <script src="../Scripts/userClass.js"></script>
+    <script src="../Scripts/locStorOperations.js"></script>
     <script src="../Scripts/validations.js"></script>
     <script src="../Scripts/navigations.js"></script>
     <script src="../Scripts/phase1logic.js"></script>

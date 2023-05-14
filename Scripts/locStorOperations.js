@@ -5,7 +5,8 @@ let accessGranted = false;
 
 //check level access, call the checkLevlAccess() with corresponding level of each page
 function checkLevlAccess(level){
-    return userDataObj.accessLvl >= level ? accessGranted = true : accessGranted = false;
+    accessGranted = userDataObj && userDataObj.accessLvl >= level;
+    return accessGranted;
 }
 
 function setDataInLocStorage(userObj) {
