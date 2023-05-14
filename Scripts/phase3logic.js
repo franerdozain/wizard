@@ -1,68 +1,65 @@
 // On page opening
 const checkIfAccessIsAllowed = () => {
   checkLevlAccess(3);
-  return accessGranted ? accessGranted : goPreviousPage(2)
+  return accessGranted ? accessGranted : goPreviousPage(3)
 }
 
-
-
-const nextPageButton = document.getElementById('next-page-button');
+const nextPageButton = document.getElementById('submitBtnPhase3');
 const imageUrlInput = document.getElementById('image-url');
-const errorMessage = document.getElementById('error-message');
-const prevPageButton = document.getElementById('prev-page-button');
-const hobbiesInput = document.getElementById('hobbies');
-const hobbiesList = document.getElementById('hobbies-list');
-imageUrlInput.addEventListener('input', validateImageUrl);
+const prevPageButton = document.getElementById('prevPage');
+imageUrlInput.addEventListener('input', changeStyleImageInput);
 
+// if user has already fill an input and submitted, this function will show that info hosted at the local storage
+const fillWithExistingData = () => {
+  const formPhase3 = document.getElementById("formPhase3");
+  if (userDataObj) {
+    const formElements = formPhase3.elements;
+    formPhase3.elements["image-url"].value = userDataObj.image;
+
+    for (const element of formElements) {
+      if (element.type === "checkbox" && userDataObj.hobbies.includes(element.name)){
+        element.checked = true;
+      }
+    }
+  }
+}
 
 const submitForm = () => {
   const formPhase3 = document.getElementById("formPhase3");
 
   formPhase3.addEventListener("submit", (e) => {
-      e.preventDefault();
-      // get data from form
-      const formData = new FormData(formPhase3);
-      const img = formData.get("image-url");
-      const hobbies = formData.get("hobbies");
-      
-      // prepare data to be sent to local storage
-      userDataObj.img = img;
-      userDataObj.hobbies = hobbies;
-      userDataObj.accessLvl += 1   
-      if (isValidImageUrl(img)) {
-          setDataInLocStorage(userDataObj)
-          goNextPage(3)
-      }
-  });
+    e.preventDefault();
+    // get data from form
+    const formData = new FormData(formPhase3);
+    const img = formData.get("image-url");
 
+    // prepare data to be sent to local storage    
+    const arrayOfHobbies = []
+    formData.forEach((value, key) => {
+      const checkboxHobby = formPhase3.elements[key];
+      
+      if (checkboxHobby.type === "checkbox" && checkboxHobby.checked) {
+        arrayOfHobbies.push(value)
+      }
+    });
+    
+    // put data in local storage
+    userDataObj.hobbies = arrayOfHobbies;
+    userDataObj.image = img;
+    
+    if (isValidImageUrl(img)) {
+      if (userDataObj.accessLvl < 4) userDataObj.accessLvl += 1;
+      setDataInLocStorage(userDataObj)
+      goNextPage(3)
+    }
+  })
 }
 
-
-// nextPageButton.addEventListener('click', () => {
-//   if (isValidImageUrl(imageUrlInput.value)) {
-//     goNextPage();
-//   }
-// });
-
-prevPageButton.addEventListener('click', () => {
-  console.log('it works')
+prevPageButton.addEventListener('click', (e) => {
+  e.preventDefault();
   goPreviousPage(3);
-
 })
 
-
-hobbiesInput.addEventListener('input', () => {
-  hobbiesList.innerHTML = '';
-  const hobbies = hobbiesInput.value.split(',');
-  for (const hobby of hobbies) {
-    const trimmedHobby = hobby.trim();
-    if (trimmedHobby) {
-      const li = document.createElement('li');
-      li.textContent = trimmedHobby;
-      hobbiesList.appendChild(li);
-    }
-  }
-});
-
-checkIfAccessIsAllowed()
+checkIfAccessIsAllowed();
+fillWithExistingData();
 submitForm();

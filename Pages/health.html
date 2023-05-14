@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health</title>
+    <link rel="stylesheet" href="../Styling/style.css">
+</head>
+<body class="health">
+    <div>
+        <form id="formHealth" onsubmit="handleSubmit(event)">
+            <div id="happiness">
+                <span>Are you a happy person?</span>
+                    <input class="happiness"  name="happyYes" type="button" id="happyYes" value="Yes" onclick="setButtonValue(event)">
+                    <input class="happiness" type="button" id="happyNo" value="No" onclick="setButtonValue(event)">
+            </div>
+            <div id="skydiving">
+                <span>Will you do skydiving?</span>
+                    <input class="skydiving" type="button" id="skydivingYes" value="Yes" onclick="setButtonValue(event)">
+                    <input class="skydiving" type="button" id="skydivingMaybe" value="Maybe" onclick="setButtonValue(event)">
+                    <input class="skydiving" type="button" id="skydivingNo" value="No" onclick="setButtonValue(event)">
+            </div>
+            <div id="usd">
+                <span for="usd">Do you have $1 in your pocket now?</span>
+                    <input class="oneUsd" type="button" id="usdYes" value="Yes" onclick="setButtonValue(event)">
+                    <input class="oneUsd" type="button" id="usdNo" value="No" onclick="setButtonValue(event)">
+            </div>
+            <div id="alert">
+            </div>
+            <div class="navButtons">
+                <button class="healthNavBtn" type="button" id="prevPage">Previous Page</button>
+                <input class="healthNavBtn" type="submit" id="submitBtnHealth" value="Submit">
+            </div>
+        </form>
+    </div>
+    <script src="../Scripts/userClass.js"></script>
+    <script src="../Scripts/locStorOperations.js"></script>
+    <script src="../Scripts/validations.js"></script>
+    <script src="..//Scripts/navigations.js"></script>
+    <script src="..//Scripts/health.js"></script>
+</body>
+</html>

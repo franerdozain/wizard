@@ -11,21 +11,35 @@
 <body class="phase3">
     
     <form id="formPhase3" class="form3">
-      <h1 class="h13">Upload Image</h1>
+      <h1>Upload Image</h1>
       <label for="image-url">Image URL:</label>
       <input type="text" id="image-url" name="image-url" placeholder="Enter a valid image URL" required autofocus>
-      <div id="error-message" class="error"></div>
-      <label for="hobbies">Hobbies:</label>
-      <input type="text" id="hobbies" name="hobbies" placeholder="Enter your hobbies separated by commas">
-      <ul id="hobbies-list"></ul>
-      <button id="prev-page-button">Previous Page</button>      
-      <button type="submit" id="submitBtnPhase3">Submit</button>
+      <p>Hobbies:</p>
+      <div id="hobbiesDiv">
+        <input type="checkbox" id="hobby1" name="chess" value="chess">
+        <label for="hobby1">Chess</label>
+        
+        <input type="checkbox" id="hobby2" name="movies" value="movies">
+        <label for="hobby2">Movies</label>
+        
+        <input type="checkbox" id="hobby3" name="sports" value="sports">
+        <label for="hobby3">Sports</label>
+        
+        <input type="checkbox" id="hobby4" name="cars" value="cars">
+        <label for="hobby4">Cars</label>
+        
+        <input type="checkbox" id="hobby5" name="dolls" value="dolls">
+        <label for="hobby5">Dolls</label>
+      </div>
+      <div class="navButtons">
+        <button id="prevPage">Previous Page</button>
+        <button type="submit" id="submitBtnPhase3">Submit</button>
+      </div>
     </form>
-    <div></div>
     <script src="../Scripts/userClass.js"></script>
     <script src="../Scripts/locStorOperations.js"></script>
     <script src="../Scripts/validations.js"></script>
-    <script src="../Scripts/phase3logic.js"></script>
     <script src="../scripts/navigations.js"></script>
+    <script src="../Scripts/phase3logic.js"></script>
 </body>
 </html>

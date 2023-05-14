@@ -8,6 +8,9 @@ class User {
         this.number = NaN
         this.image = ""
         this.hobbies = []
+        this.happiness = ""
+        this.skydiving = ""
+        this.oneUsd = ""
         this.accessLvl = 2
     }
 }

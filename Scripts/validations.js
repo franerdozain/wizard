@@ -1,5 +1,5 @@
 function validateName(firstName, lastName) {
-    const namePattern = /^[A-Za-z]{2,}\s[A-Za-z]{2,}$/;
+    const namePattern = /^[A-Za-z]{2,}(?:\s[A-Za-z]{2,})+$/;
     return namePattern.test(`${firstName} ${lastName}`);
 }
 
@@ -16,18 +16,21 @@ function validateDateOfBirth(dateOfBirth) {
 function getHouseNumber(houseNumberProvided) {
     return houseNumberProvided === "" || houseNumberProvided > 0 ? true : false;
 }
+
 function isValidImageUrl(url) {
+    // this function only checks data URL image format and if there isn't a match checks for file extension, but doesn't guarantee that the img is valid and accessible 
+    const isDataUrlImage = url.startsWith("data:image/");
+    
     const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-    return imageExtensions.some(extension => url.endsWith(extension));
+    const validExtension = imageExtensions.some(extension => url.endsWith(extension)); 
+
+    return isDataUrlImage || validExtension;
 }
 
-function validateImageUrl() {
-    const imageUrl = imageUrlInput.value;
-    if (!isValidImageUrl(imageUrl)) {
-      errorMessage.textContent = 'Please enter a valid image URL';
-      nextPageButton.disabled = true;
-    } else {
-      errorMessage.textContent = '';
-      nextPageButton.disabled = false;
-    }
+function changeStyleImageInput() {
+    const imgInput = document.getElementById("image-url")
+    const imageUrl = imgInput.value;
+    isValidImageUrl(imageUrl) ? imgInput.style.border = "1px solid #cccccc" : imgInput.style.border = "1px solid red"
+    return imgInput
 }
+
